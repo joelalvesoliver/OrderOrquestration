@@ -1,7 +1,10 @@
+using OrderOrquestration.Application.Features.OrderOrquestration.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddOrderOrquestrationExtensions();
 
 var app = builder.Build();
 
