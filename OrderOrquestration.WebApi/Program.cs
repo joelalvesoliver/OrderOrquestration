@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using OrderOrquestration.Application.Features.Configuration.DependencyInjection;
 using OrderOrquestration.Application.Features.OrderOrquestration.DependencyInjection;
 using OrderOrquestration.Application.Shared.Context;
 using OrderOrquestration.Application.Shared.DependencyInjection;
@@ -20,6 +21,7 @@ Log.Logger = new LoggerConfiguration()
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddOrderOrquestrationExtensions();
+builder.Services.AddOrderConfigurationExtensions();
 builder.Services.AddDataBaseExtensions(builder.Configuration);
 
 builder.Services.AddSwaggerGen();

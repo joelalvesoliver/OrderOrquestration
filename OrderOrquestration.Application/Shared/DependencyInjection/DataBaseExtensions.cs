@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrderOrquestration.Application.Shared.Context;
 using OrderOrquestration.Application.Shared.Domain.Contracts;
@@ -19,8 +19,7 @@ namespace OrderOrquestration.Application.Shared.DependencyInjection
             services.AddDbContext<ApplicationDbContext>(
                 options =>
                 {
-                    options.UseSqlite(config.GetConnectionString("SQLite"));
-                    options.EnableSensitiveDataLogging(false);
+                    options.UseInMemoryDatabase("Db_Configurations");
                 });
 
             return services;

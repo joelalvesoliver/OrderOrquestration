@@ -26,10 +26,20 @@ namespace OrderOrquestration.Application.Shared.Repositories
             return (await _context.SaveChangesAsync(cancellationToken)) > 0;
         }
 
+        public async Task<ActionConfiguration> GetActionConfigurationByIdAsync(int actionId, CancellationToken cancellationToken)
+        {
+            return await _context.Actions.Where(e => e.Id == actionId).FirstOrDefaultAsync(cancellationToken: cancellationToken);
+        }
+
         public async Task<List<ActionConfiguration>> GetActionsAsync(CancellationToken cancellationToken)
         {
             return await _context.Actions
                         .ToListAsync(cancellationToken);
+        }
+
+        public async Task<ItemConfiguration> GetItemConfigurationByProductAsync(string product, CancellationToken cancellationToken)
+        {
+            return await _context.ItemConfigurations.Where(e => e.Product == product).FirstOrDefaultAsync(cancellationToken: cancellationToken);
         }
 
         public async Task<List<ItemConfiguration>> GetItemConfigurationsAsync(CancellationToken cancellationToken)

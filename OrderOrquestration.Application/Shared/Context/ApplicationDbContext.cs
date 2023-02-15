@@ -9,7 +9,7 @@ namespace OrderOrquestration.Application.Shared.Context
         public DbSet<ItemConfiguration> ItemConfigurations { get; set; }
         public DbSet<ActionConfiguration> Actions { get; set; }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
         }
