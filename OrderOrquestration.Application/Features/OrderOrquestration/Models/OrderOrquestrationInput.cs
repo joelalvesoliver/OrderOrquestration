@@ -5,6 +5,10 @@ namespace OrderOrquestration.Application.Features.OrderOrquestration.Models
 {
     public class OrderOrquestrationInput : IRequest<Output<string>>
     {
-        public string ProductOrder { get; set; }
+        public OrderOrquestrationInput(string product)
+        {
+            ProductOrder = product;
+        }
+        public string ProductOrder { get;}
     }
 }

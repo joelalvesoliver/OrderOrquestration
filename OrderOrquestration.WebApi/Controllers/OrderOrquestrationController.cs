@@ -33,7 +33,7 @@ namespace OrderOrquestration.WebApi.Controllers
         {
             try
             {
-                var input = new OrderOrquestrationInput();
+                var input = new OrderOrquestrationInput(productOrder);
                 return Ok(await _mediator.Send(input, cancellationToken));
             }
             catch (Exception)

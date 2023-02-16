@@ -37,9 +37,9 @@ namespace OrderOrquestration.Application.Shared.Repositories
                         .ToListAsync(cancellationToken);
         }
 
-        public async Task<ItemConfiguration> GetItemConfigurationByProductAsync(string product, CancellationToken cancellationToken)
+        public async Task<List<ItemConfiguration>> GetItemConfigurationByProductAsync(string product, CancellationToken cancellationToken)
         {
-            return await _context.ItemConfigurations.Where(e => e.Product == product).FirstOrDefaultAsync(cancellationToken: cancellationToken);
+            return await _context.ItemConfigurations.Where(e => e.Product == product).ToListAsync(cancellationToken);
         }
 
         public async Task<List<ItemConfiguration>> GetItemConfigurationsAsync(CancellationToken cancellationToken)

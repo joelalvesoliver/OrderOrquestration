@@ -10,7 +10,7 @@ namespace OrderOrquestration.Application.Shared.Domain.Contracts
 
         Task<bool> CreateItemConfigurationAsync(ItemConfiguration item, CancellationToken cancellationToken);
         Task<List<ItemConfiguration>> GetItemConfigurationsAsync(CancellationToken cancellationToken);
-        Task<ItemConfiguration> GetItemConfigurationByProductAsync(string product, CancellationToken cancellationToken);
+        Task<List<ItemConfiguration>> GetItemConfigurationByProductAsync(string product, CancellationToken cancellationToken);
 
     }
 }
