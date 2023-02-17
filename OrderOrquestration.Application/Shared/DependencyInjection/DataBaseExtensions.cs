@@ -11,10 +11,10 @@ namespace OrderOrquestration.Application.Shared.DependencyInjection
     {
         public static IServiceCollection AddDataBaseExtensions(this IServiceCollection services, IConfiguration config) =>
             services
-                .AddStarWarsRepository()
-                .AddPlanetsDbContext(config);
+                .AddRepository()
+                .AddAplicationDbContext(config);
 
-        private static IServiceCollection AddPlanetsDbContext(this IServiceCollection services, IConfiguration config)
+        private static IServiceCollection AddAplicationDbContext(this IServiceCollection services, IConfiguration config)
         {
             services.AddDbContext<ApplicationDbContext>(
                 options =>
@@ -25,7 +25,7 @@ namespace OrderOrquestration.Application.Shared.DependencyInjection
             return services;
         }
 
-        private static IServiceCollection AddStarWarsRepository(this IServiceCollection services)
+        private static IServiceCollection AddRepository(this IServiceCollection services)
         {
             services.AddTransient<IOrderOrquestrationRepository, OrderOrquestrationRepository>();
             return services;
